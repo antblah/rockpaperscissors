@@ -44,14 +44,25 @@ let game = () => {
     let finalScore = 0.0;
     for (let i = 0; i < 5; i++) {
         let score = playRound();
-        if (score === 1) {console.log ('You won this round.')}
-        else if (score === 0) {console.log ('You lost this round.')}
-        else {console.log ('It was a tie.')} 
+        switch (score) {
+            case 0 :
+                console.log('You lost this round.');
+                break;
+            
+            case 1 :
+                console.log('You won this round.');
+                break;
+            
+            default : 
+            console.log ('It was a tie.');
+        }
         finalScore += score;
     }
-    if (finalScore > 2.5) {console.log ('FINAL RESULT: You won the game!')} 
-    else if (finalScore === 2.5) {console.log ('FINAL RESULT: It was a tie!')} 
-    else (console.log ('FINAL RESULT: You lost the GAME.'))
+    if (finalScore > 2.5) {
+        console.log ('\nFINAL RESULT: You won the game!');
+    } else if (finalScore === 2.5) {
+        console.log ('\nFINAL RESULT: It was a tie!');
+    } else console.log ('\nFINAL RESULT: You lost the GAME.');
 }
 
 console.log(game());
