@@ -10,28 +10,33 @@ let playRound = (playerSelection, computerSelection) => {
     //let playerSelection = playerSelectionTemp.toLowerCase()
     computerSelection = computerPlay();
 
-    // Outcomes if player selects Rock
-    if (playerSelection === 'rock' && computerSelection === 'paper') {
-        return 0
-    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        return 1
-    } 
-    
-    // Outcomes if player selects Paper
-    else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        return 1
-    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return 0
+    switch (true) {
+        // Outcomes if player selects Rock
+        case (playerSelection === 'rock' && computerSelection === 'paper') :
+            return 0;
+            break;
+        case (playerSelection === 'rock' && computerSelection === 'scissors') :
+            return 1;
+            break;
+        
+        // Outcomes if player selects Paper
+        case (playerSelection === 'paper' && computerSelection === 'rock') :
+            return 1;
+            break;
+        case (playerSelection === 'paper' && computerSelection === 'scissors') :
+            return 0;
+            break;
 
-    // Outcomes if player selects Scissors
-    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return 0
-    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        return 1
-    
-    } else {
-        return .5
-    }
+        // Outcomes if player selects Scissors
+        case (playerSelection === 'scissors' && computerSelection === 'rock') :
+            return 0;
+            break;
+        case (playerSelection === 'scissors' && computerSelection === 'paper') :
+            return 1;
+            break;
+        
+        default : return .5
+    }    
 }
 
 // Plays five rounds of the game. 
